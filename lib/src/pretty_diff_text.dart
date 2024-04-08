@@ -92,19 +92,16 @@ class PrettyDiffText extends StatelessWidget {
       textSpans.add(TextSpan(text: diff.text, style: textStyle));
     });
 
-    return RichText(
-      text: TextSpan(
+    return SelectableText.rich(
+      TextSpan(
         text: '',
         style: this.defaultTextStyle,
         children: textSpans,
       ),
       textAlign: this.textAlign,
       textDirection: this.textDirection,
-      softWrap: this.softWrap,
-      overflow: this.overflow,
       maxLines: this.maxLines,
       textScaler: TextScaler.linear(this.textScaleFactor),
-      locale: this.locale,
       strutStyle: this.strutStyle,
       textWidthBasis: this.textWidthBasis,
       textHeightBehavior: this.textHeightBehavior,
